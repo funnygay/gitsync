@@ -1,0 +1,12 @@
+{
+    "repos":[
+        {
+            "sourceUri": "https://github.com/guanghuispark/DoTweenText.git",
+            "destUri": "DoTweenText@ssl://sparkhui@sh02-plasticscm.unity.cn:8787"
+        },
+        {
+            "sourceUri": "https://github.com/Unity-Technologies/SmallOfficeRayTracing.git",
+            "destUri": "SmallOfficeRayTracing@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787"
+        }
+    ]
+}

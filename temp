@@ -1,0 +1,68 @@
+cm sync -clientconf=client.conf DoTweenText@ssl://sparkhui@sh02-plasticscm.unity.cn:8787 git https://github.com/guanghuispark/DoTweenText.git
+cm workspace -clientconf=client.conf create uiwidgtes2 uiwidgtes2 DoTweenText@ssl://sparkhui@sh02-plasticscm.unity.cn:8787
+docker run -it --rm gitsync bash
+
+cm sync DoTweenText@ssl://sparkhui@sh02-plasticscm.unity.cn:8787 git https://github.com/guanghuispark/DoTweenText.git
+
+
+cm repository create DoTweenText@ssl://sparkhui@sh02-plasticscm.unity.cn:8787 -clientconf=client.conf
+
+https://github.com/Unity-Technologies/TheHeretic-VFXCharacter
+
+
+cm repository create SmallOfficeRayTracing@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787
+
+
+
+cm repository create BoatAttack@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787
+
+cm sync DoTweenText@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787 git https://github.com/Unity-Technologies/DoTweenText.git
+
+
+cm repository create ShaderGraph_ExampleLibrary@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787
+
+cm sync ShaderGraph_ExampleLibrary@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787 git https://github.com/UnityTechnologies/ShaderGraph_ExampleLibrary.git
+
+
+    cm repository create Test_ShaderGraphBlog@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787
+
+cm sync Test_ShaderGraphBlog@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787 git https://github.com/UnityTechnologies/Test_ShaderGraphBlog.git
+
+
+cm repository create VisualEffectGraph-Samples@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787
+
+cm sync VisualEffectGraph-Samples@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787 git https://github.com/Unity-Technologies/VisualEffectGraph-Samples.git
+
+
+cm repository create TheHeretic-VFXCharacter@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787
+
+cm sync TheHeretic-VFXCharacter@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787 git https://github.com/Unity-Technologies/TheHeretic-VFXCharacter.git
+
+
+
+
+cm sync FontainebleauDemo@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787 git https://github.com/Unity-Technologies/FontainebleauDemo.git
+
+
+https://github.com/guanghuispark/DoTweenText.git
+
+https://github.com/Unity-Technologies/TheHeretic-VFXCharacter.git
+https://github.com/Unity-Technologies/FontainebleauDemo.git
+https://github.com/Unity-Technologies/SmallOfficeRayTracing.git
+
+https://github.com/Unity-Technologies/BoatAttack.git
+
+
+https://github.com/UnityTechnologies/ShaderGraph_ExampleLibrary.git
+https://github.com/UnityTechnologies/Test_ShaderGraphBlog.git
+https://github.com/Unity-Technologies/VisualEffectGraph-Samples.git
+
+
+
+cp —r /opt/plasticscm5/mono/lib/libgit2.so   /usr/lib
+
+
+docker build --build-arg hostUri=@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787 -t gitsync .
+
+
+docker build --build-arg hostUri=@ssl://sparkhui@sh02-plasticscm.unity.cn:8787 -t gitsync .
