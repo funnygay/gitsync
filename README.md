@@ -6,7 +6,9 @@ gitsync is a tool to sync git repo to plastic
 
 ### image build
 
+
 ```
+cd <gitsync_dir>
 docker build -t $IMAGE_NAME .
 ```
 for example:
