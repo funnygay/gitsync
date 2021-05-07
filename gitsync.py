@@ -2,34 +2,27 @@
 # -*- coding:utf-8 -*- 
 import os
 import sys
-import re
 import getopt
-import subprocess
 import json
 
-def gitSync(repoListFile, hostUri):
+def gitSync(repoListFile):
     if not os.path.exists(repoListFile):
         print("repoList" + repoList + "file not found")
         return
     with open(repoListFile, 'r') as f:
-    temp = json.loads(f.read())
-    repoList = temp['repos']
-    for repo in repoList:
-        syncRepo(repo['sourceUri'], repo['destUri'])
-    f.close()
+        temp = json.loads(f.read())
+        repoList = temp['repos']
+        for repo in repoList:
+            syncRepo(repo['sourceUri'], repo['destUri'])
 
-def syncRepo(repoUri , hostUri):
-    temp = re.split('[/.]', repoUri)
-    repoName = temp[len(temp)-2]
-    createRepo = "cm repository create " + repoName + hostUri
-    sync = "cm sync " + repoName + hostUri + " git " + repoUri
+def syncRepo(sourceUri , destUri):
+    createRepo = "cm repository create " + destUri
+    sync = "cm sync " + destUri + " git " + sourceUri
     os.system(createRepo)
-    p = os.system(sync)
-    print(sync)
+    os.system(sync)
+
     
 def main():
-    # define some varibles
-    hostUri = "@ssl://unity-tech-cn@sh01-plasticscm.unity.cn:8787"
 
     # get intput agrs
     options, args = getopt.getopt(sys.argv[1:], 'f:')
@@ -38,7 +31,7 @@ def main():
             repoList = arg
 
     # sync git repos to plastic
-    gitSync(repoList, hostUri)
+    gitSync(repoList)
 
 
 if __name__=="__main__":
